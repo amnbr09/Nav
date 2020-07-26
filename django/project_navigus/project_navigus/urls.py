@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import path
+from presence_service import views
+from django.conf.urls import url
+
+
 
 urlpatterns = [
-    path('presence_service/', include('presence_service.urls')),
-    path('admin/', admin.site.urls),
+path('signup/', views.Signupview, name='signup'), 
+path('login/', views.user_login, name = 'login'),
+path('', views.IndexView.as_view(), name='index'),
+path('<int:pk>/', views.DocDetailView.as_view(), name='details'),
+path('<int:pk>/title/', views.read, name='read'),
+path('', views.upload, name='upload'),
 ]

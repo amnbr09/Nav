@@ -1,0 +1,6 @@
+<h1>{{ doc.title }}</h1>
+<ul>
+{% for d in Doc.objects.all %}
+    <li>{{ d.title }}</li>
+{% endfor %}
+</ul>

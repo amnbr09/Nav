@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'presence_service.apps.PresenceServiceConfig',
+    'channels_presence',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project_navigus.wsgi.application'
 
+ASGI_APPLICATION = "project_navigus.routing.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
